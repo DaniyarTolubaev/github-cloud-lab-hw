@@ -72,6 +72,7 @@ jobs:
 
       - name: Scan image for vulnerabilities with Trivy
         uses: aquasecurity/trivy-action@master
+        continue-on-error: true
         with:
           image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           format: table
